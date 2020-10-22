@@ -348,12 +348,13 @@ public class JavaStart003 {
 //		}
 		
 		//19.해당 달의 시작 요일과 일수를 입력 받아 달력을 출력. \t탭을 이용
-		System.out.print("시작 요일 \n 1.일 2.월 3.화 4.수 5.목 6.금 7.토\n>>");
-		int a=Integer.parseInt(new java.util.Scanner(System.in)
-				.nextLine());
+		java.util.Scanner a=new java.util.Scanner(System.in);
+		System.out.print("시작 요일>>");
+		String val=a.nextLine();
 		System.out.print("해당 달의 일수>>");
 		int b=Integer.parseInt(new java.util.Scanner(System.in)
 				.nextLine());
+		System.out.println("일\t월\t화\t수\t목\t금\t토");
 		
 		//20.컴퓨터가 던진 동전이 앞면 인지 뒷면 인지 맞추는 프로그램을 구현
 		//  맞춘 횟수와 틀린 횟수를 기록해서 보여주자.
