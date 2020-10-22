@@ -3,7 +3,7 @@ package com.human.ex;
 public class JavaStart003 {
 
 	public static void main(String[] args) {
-//반복문
+		//반복문
 
 		//1.while문과 for문을 이용해서 왼쪽 순서도를 프로그램으로 구현해 보자.
 //		<while>
@@ -160,7 +160,7 @@ public class JavaStart003 {
 //				if(a>c) {
 //					System.out.println("가장 작은 수>>"+c);
 //				}else {
-//					System.out.println("가장 작은 수>>"+c);
+//					System.out.println("가장 작은 수>>"+a);
 //				}
 //			}else {
 //				System.out.println("가장 큰 수>>"+c);
@@ -173,13 +173,17 @@ public class JavaStart003 {
 //		int i=0;
 //		int sum=0;
 //		while(i<5) {
-//			System.out.print("수학과목 점수(100이하)>>");
+//			System.out.print("수학과목 점수>>");
 //			int a=Integer.parseInt(new java.util.Scanner(System.in)
 //					.nextLine());
-//			if(a<=60) {
-//				sum++;
+//			if(a<=100){
+//				if(a<=60) {
+//					sum++;
+//				}
+//				i++;
+//			}else{
+//				i--;
 //			}
-//			i++;
 //		}
 //		System.out.println("탈락자"+sum+"명");
 
@@ -190,9 +194,12 @@ public class JavaStart003 {
 //		int sum=0;
 //		while(sum<=100) {
 //			sum=sum+i;
-//			System.out.println(i+":"+sum);
+//			if(sum<=100) {
+//				System.out.println(i+":"+sum);
+//			}
 //			i++;
 //		}
+		
 		
 		//11.문자열과 숫자를 입력받아 입력받은 문자열을 숫자만큼 출력하는 프로그램을 만들어 보자
 //		java.util.Scanner a=new java.util.Scanner(System.in);
@@ -298,13 +305,14 @@ public class JavaStart003 {
 //				.nextLine());		
 //		int i=1;
 //		int j=1;
-//		while(i<=b) {
-//			while(j<=a) {
+//		int k=b;
+//		while(i<=a) {
+//			while(j<=k) {
 //				System.out.print(j+"\t");
 //				j++;
 //			}
 //			System.out.println("");
-//			a=a+5;
+//			k=k+b;
 //			i++;
 //		}
 		
@@ -312,49 +320,97 @@ public class JavaStart003 {
 		// 1  2  3  4  5
 		// 10 9  8  7  6
 		// 11 12 13 14 15
+		// 20 19 18 17 16
 		// 21 22 23 24 25
-//		int i=1;
-//		int j=10;
-//		while(i<11) {
-//			if(i<6) {
+		
+//		int count=5;
+//		int lineCount=0;
+//		int total=25;
+//	
+//		for(int i=1; i<total+1; i++) {
+//			if(i%5==1) {
+//				lineCount++;
+//			}
+//			if(lineCount%2==0) {
+//				System.out.print((count*lineCount)-(i-1)%5+"\t");
+//			}else {	
 //				System.out.print(i+"\t");
-//			}else {
-//				if(i==6) {
-//					System.out.println("");
-//					System.out.print(j+"\t");
-//					j--;
-//				}else {
-//					System.out.print(j+"\t");
-//					j--;
-//
-//				}
+//			}		
+//			if(i%count==0) {
+//				System.out.println();
 //			}
-//			i++;
-//		}
-//		System.out.println("");
-//		i=1;
-//		j=1;
-//		int c=11;
-//		while(i<3) {
-//			while(j<6) {
-//				System.out.print(c+"\t");
-//				j++;
-//				c++;
-//			}
-//			System.out.println("");
-//			j=1;
-//			c=c+5;
-//			i++;
 //		}
 		
 		//19.해당 달의 시작 요일과 일수를 입력 받아 달력을 출력. \t탭을 이용
-		java.util.Scanner a=new java.util.Scanner(System.in);
-		System.out.print("시작 요일>>");
-		String val=a.nextLine();
-		System.out.print("해당 달의 일수>>");
-		int b=Integer.parseInt(new java.util.Scanner(System.in)
-				.nextLine());
-		System.out.println("일\t월\t화\t수\t목\t금\t토");
+//		java.util.Scanner scanner=new java.util.Scanner(System.in);
+//		System.out.print("시작 요일>>");
+//		String i=scanner.nextLine();
+//		System.out.print("해당 달의 일수>>");
+//		int j=Integer.parseInt(new java.util.Scanner(System.in)
+//				.nextLine());
+//		System.out.println("일\t월\t화\t수\t목\t금\t토");
+//		if(i.equals("일")) {
+//			for(int a=1; a<j+1; a++) {
+//				System.out.print(a+"\t");
+//				if(a%7==0) {
+//					System.out.println("");
+//				}
+//			}
+//		}
+//		if(i.equals("월")) {
+//			System.out.print("\t");
+//			for(int a=1; a<j+1; a++) {
+//				System.out.print(a+"\t");
+//				if(a%7==6) {
+//					System.out.println("");
+//				}
+//			}
+//		}
+//		if(i.equals("화")) {
+//			System.out.print("\t\t");
+//			for(int a=1; a<j+1; a++) {
+//				System.out.print(a+"\t");
+//				if(a%7==5) {
+//					System.out.println("");
+//				}
+//			}
+//		}
+//		if(i.equals("수")) {
+//			System.out.print("\t\t\t");
+//			for(int a=1; a<j+1; a++) {
+//				System.out.print(a+"\t");
+//				if(a%7==4) {
+//					System.out.println("");
+//				}
+//			}
+//		}
+//		if(i.equals("목")) {
+//			System.out.print("\t\t\t\t");
+//			for(int a=1; a<j+1; a++) {
+//				System.out.print(a+"\t");
+//				if(a%7==3) {
+//					System.out.println("");
+//				}
+//			}
+//		}
+//		if(i.equals("금")) {
+//			System.out.print("\t\t\t\t\t");
+//			for(int a=1; a<j+1; a++) {
+//				System.out.print(a+"\t");
+//				if(a%7==2) {
+//					System.out.println("");
+//				}
+//			}
+//		}
+//		if(i.equals("토")) {
+//			System.out.print("\t\t\t\t\t\t");
+//			for(int a=1; a<j+1; a++) {
+//				System.out.print(a+"\t");
+//				if(a%7==1) {
+//					System.out.println("");
+//				}
+//			}
+//		}
 		
 		//20.컴퓨터가 던진 동전이 앞면 인지 뒷면 인지 맞추는 프로그램을 구현
 		//  맞춘 횟수와 틀린 횟수를 기록해서 보여주자.
@@ -387,11 +443,11 @@ public class JavaStart003 {
 //			System.out.print("주사위 숫자는?\n1.1 2.2 3.3 4.4 5.5 6.6 7.종료 >>");
 //			int a=Integer.parseInt(new java.util.Scanner(System.in)
 //					.nextLine());
-//			if(k==a) {
+//			if(a!=7 && k==a) {
 //				System.out.println("주사위 수는"+k+"\n맞추셨습니다.");
 //				i++;
 //			}
-//			if(k!=a) {
+//			if(a!=7 && k!=a) {
 //				System.out.println("주사위 수는 "+k+"\n틀리셨습니다.");
 //				j++;
 //			}
@@ -401,6 +457,7 @@ public class JavaStart003 {
 //			}
 //		}
 		
+
 	}
 
 }
