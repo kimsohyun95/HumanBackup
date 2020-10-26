@@ -1,8 +1,8 @@
 package com.human.ex;
 
-public class JavaStart005_1 {
+public class JavaStart005_1 { //선언부
 	//리턴값이 없고 매개변수도 없는 함수
-	public static void function1() {
+	public static void function1() { //()에 매개변수 없으면 void를 써도 됨.
 		System.out.println("안녕하세요");
 		//return; 리턴값이 없으면 생략할 수 있다.
 	}
@@ -29,7 +29,7 @@ public class JavaStart005_1 {
 		
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { //호출부
 		function1();
 		function1();
 		
