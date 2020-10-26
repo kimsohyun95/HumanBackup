@@ -25,6 +25,8 @@ public class Car {
 
 		System.out.println("");
 
+		//c2=c1으로 하면 c2에 c1의 주소가 들어가기 때문에 독립된 두 개의 데이터가 되지 않음
+		//c2나 c1을 바꾸면 둘 다 바뀌게 됨.
 		ClassCar c2=new ClassCar();
 		c2.color="검정";
 		c2.tire.brand="금호";

@@ -37,12 +37,12 @@ public class JavaStart005_1 {
 		function2(12);
 		
 		int a=function3();
-		System.out.println(a);
+		System.out.println(a); //21
 		System.out.println(function3()); //위와 같은 내용이 출력 된다.
 		
 		int b=function4(1,2,3);
-		System.out.println(b);
-		System.out.println(function4(3,4,5));
+		System.out.println(b); //0
+		System.out.println(function4(3,4,5)); //2
 	
 
 	}
