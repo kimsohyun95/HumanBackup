@@ -10,7 +10,7 @@ public class JavaStart004 {
 		//int arr1[] = new int[3];
 		int arr1[] = {1,2,3};
 		arr1[1]=5;
-		System.out.println(arr1[1]);
+		System.out.println(arr1[1]); 
 		
 		double arr2[] = {1.1,2.1,3.1};
 		arr2[0]=1.5;
