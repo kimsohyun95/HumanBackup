@@ -35,6 +35,9 @@ public class Car {
 		c2.brand="기아";
 		c2.Maxspeed=220;
 		c2.type="k7";
+		//분리된 똑같은 데이터는 c2.color=c1.color;로
+		// 그런데 스트링 객체는 내용변경이 불가해서 색상에 검정대신 노랑을 입력하면 검정이 없어지고 노랑이 되는게 아닌
+		// 노랑이 새로 생김
 		
 		System.out.println("자동차 색 : "+c2.color);
 		System.out.println("바퀴 제조사 : "+c2.tire.brand);
