@@ -63,18 +63,22 @@ public class JavaStart006 {
 			int c=(int)(Math.random()*99+1);
 			switch(a) {
 			case 1:
+				System.out.println("레벨 1");
 				sum=b+c;
 				System.out.println(function1(b,c));
 				break;
 			case 2:
+				System.out.println("레벨 2");
 				sum=b-c;
 				System.out.println(function2(b,c));
 				break;
 			case 3:
+				System.out.println("레벨 3");
 				sum=b*c;
 				System.out.println(function3(b,c));
 				break;
 			default:
+				System.out.println("레벨 4");
 				sum=b/c;
 				System.out.println(function4(b,c));
 			}
@@ -85,8 +89,8 @@ public class JavaStart006 {
 			}else {
 				System.out.println("땡");
 			}
-
-			}
+		}
+		System.out.println("끝");
 		
 		
 		
