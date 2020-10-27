@@ -4,31 +4,35 @@ public class JavaStart006 {
 
 
 	public static void main(String[] args) {
-		//369게임 문제 풀이_JavaStart007
-		for(int count=1;count<=1000;count++) {
-			if(f369(count)) { //박수치는 함수
-				System.out.print(count); //숫자 찍는 부분
+		//1.369게임 해답지 만들기
+		//3,6,9중 하나라도 들어가면 "짝"
+		//33,36과 같이 두개 들어가면 "짝짝"
+		//10000이하
+		for(int i=1; i<=1000; i++) {
+			int a=i%10; //1의 자리 369찾기
+			int b=i/10; //10의 자리 369찾기
+			int c=i/100; //100의 자리369찾기
+			if(i>100) {
+				b=(i/10)-(i/100)*10;
 			}
-			System.out.print("\t");
-			if((count+1)%10==0) {
-				System.out.println();
+			if((a==3||a==6||a==9)&&
+					(b==3||b==6||b==9)&&
+					(c==3||c==6||c==9)) {
+				System.out.println("짝짝짝"+"("+i+")");
+			}else if((c==3||c==6||c==9)&&
+					(a==3 ||a==6||a==9||
+					b==3||b==6||b==9)) {
+				System.out.println("짝짝"+"("+i+")");
+			}else if((a==3||a==6||a==9)&&
+					(b==3||b==6||b==9)) {
+				System.out.println("짝짝"+"("+i+")");
+			}else if(a==3||a==6||a==9||
+					b==3||b==6||b==9||
+					c==3||c==6||c==9) {
+				System.out.println("짝"+"("+i+")");
+			}else{
+				System.out.println(i);
 			}
 		}
-		
-		
-	}
-
-	public static boolean f369(int count) {
-		//369 returnValue 박수안치면 true
-		boolean isReturnFlag=true;
-		while(count!=0) {
-			if((count%10%3==0)&&(count%10!=0)) {
-				System.out.print("짝");
-				isReturnFlag=false;
-			}
-			count=count/10;
-		}
-		return isReturnFlag;
-
 	}	
 }
