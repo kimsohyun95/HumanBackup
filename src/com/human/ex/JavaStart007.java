@@ -1,11 +1,33 @@
 package com.human.ex;
+// 이중반복문
 
 public class JavaStart007 {
+	
+	//사칙연산
+//	public static String function1(int a, int b) {
+//		String sum=a+"+"+b+"=";
+//		return sum;
+//	}
+//	public static String function2(int a, int b) {
+//		String min=a+"-"+b+"=";
+//		return min;
+//	}
+//	public static String function3(int a, int b) {
+//		String mul=a+"x"+b+"=";
+//		return mul;
+//	}
+//	public static String function4(int a, int b) {
+//		String div=a+"/"+b+"=";
+//		return div;
+//	}
+	
+	//이용권
+//	public static int function1(int a, int b) {
+//		int sum=a*b;
+//		return sum;
+//	}
 
 	public static void main(String[] args) {
-		// 이중반복문
-		// 1.상위 왼쪽의 이미지를 기본으로 원하는 결과를 출력할 수 있도록 a값을 설정할 수 있는 코드를 구현
-		
 		
 		//은행 프로그램 '전체메뉴: 1.입금 2.출금 3.조회 0.종료'
 		//account 변수 0으로 세팅, 입금 출금을 통에 원하는 액수 더하거나 빼주기
@@ -470,15 +492,258 @@ public class JavaStart007 {
 //			}
 //		}
 		//13)
+//		int a=0;
+//		for(int i=0; i<9; i++) {
+//			for(int j=0; j<a; j++) {
+//				System.out.print(" ");
+//			}
+//			for(int k=0; k<5; k++) {
+//				System.out.print("*");
+//			}
+//			System.out.println("");
+//			if(i<4) {
+//				a++;
+//			}else {
+//				a--;
+//			}
+//		}
+		//14) 9줄 17개
+//		int a=0;
+//		for(int i=0; i<8; i++) {
+//			for(int j=0; j<8-i; j++) {
+//				System.out.print(" ");
+//			}
+//			System.out.print("*");
+//			for(int k=1; k<a; k++) {
+//				System.out.print(" ");
+//			}
+//			if(i>0) {
+//				System.out.print("*");
+//			}
+//			System.out.println("");
+//			a=a+2;
+//		}
+//		for(int i=0; i<17; i++) {
+//			System.out.print("*");
+//		}
+		//15)
+//		int a=0;
+//		int b=0;
+//		for(int i=0; i<9; i++) {
+//			for(int j=0; j<a; j++) {
+//				System.out.print(" ");
+//			}
+//			System.out.print("*");
+//			for(int k=0; k<7-b; k++) {
+//				System.out.print(" ");
+//			}
+//			if(i!=4) {
+//				System.out.print("*");
+//			}
+//			System.out.println("");
+//			if(i<4) {
+//				a++;
+//				b+=2;
+//			}else {
+//				a--;
+//				b-=2;
+//			}
+//		}
 		
-	
+		//1.369게임 해답지 만들기
+		//3,6,9중 하나라도 들어가면 "짝"
+		//33,36과 같이 두개 들어가면 "짝짝"
+		//10000이하
+//		for(int i=1; i<=1000; i++) {
+//			int a=i%10; //1의 자리 369찾기
+//			int b=i/10; //10의 자리 369찾기
+//			int c=i/100; //100의 자리369찾기
+//			if(i>100) {
+//				b=(i/10)-(i/100)*10;
+//			}
+//			if((a==3||a==6||a==9)&&
+//					(b==3||b==6||b==9)&&
+//					(c==3||c==6||c==9)) {
+//				System.out.println("짝짝짝"+"("+i+")");
+//			}else if((c==3||c==6||c==9)&&
+//					(a==3 ||a==6||a==9||
+//					b==3||b==6||b==9)) {
+//				System.out.println("짝짝"+"("+i+")");
+//			}else if((a==3||a==6||a==9)&&
+//					(b==3||b==6||b==9)) {
+//				System.out.println("짝짝"+"("+i+")");
+//			}else if(a==3||a==6||a==9||
+//					b==3||b==6||b==9||
+//					c==3||c==6||c==9) {
+//				System.out.println("짝"+"("+i+")");
+//			}else{
+//				System.out.println(i);
+//			}
+//		}
 		
+		//랜덤하게 덧셈, 뺄셈, 곱셈, 나눗셈 문제를 내서 사용자가 맞추는 프로그램 구현
+		//레벨 4단계, 처음에는 더하기 문제만 나오다가 레벨이 업되면 뺄셈, 곱셈, 나눗셈을 차례대로 추가
+		//2자리 이하 정수 계산만
+//		int num4=0;
+//		int count=0;
+//		for(int lev=1; lev<5;) {
+//			int num1=(int)(Math.random()*99+1);
+//			int num2=(int)(Math.random()*99+1);
+//			int num3=(int)(Math.random()*lev+1);
+//			
+//			System.out.println("level "+lev);
+//			if(lev==1) {
+//				System.out.println(function1(num1,num2));
+//				num4=num1+num2;
+//			}else if(lev==2) {
+//				if(num3==1) {
+//					System.out.println(function1(num1,num2));
+//					num4=num1+num2;
+//				}else {
+//					System.out.println(function2(num1,num2));
+//					num4=num1-num2;
+//				}
+//			}else if(lev==3) {
+//				if(num3==1) {
+//					System.out.println(function1(num1,num2));
+//					num4=num1+num2;
+//				}else if(num3==2) {
+//					System.out.println(function2(num1,num2));
+//					num4=num1-num2;
+//				}else {
+//					System.out.println(function3(num1,num2));
+//					num4=num1*num2;
+//				}
+//				
+//			}else {
+//				if(num3==1) {
+//					System.out.println(function1(num1,num2));
+//					num4=num1+num2;
+//				}else if(num3==2) {
+//					System.out.println(function2(num1,num2));
+//					num4=num1-num2;
+//				}else if(num3==3) {
+//					System.out.println(function3(num1,num2));
+//					num4=num1*num2;
+//				}else {
+//					System.out.println(function4(num1,num2));
+//					num3=num1/num2;
+//				}
+//			}
+//			int a=Integer.parseInt(new java.util.Scanner(System.in)
+//					.nextLine());
+//			if(a==num4) {
+//				System.out.println("정답");
+//				count++;
+//			}else {
+//				System.out.println("땡");
+//			}
+//			if(count==5) {
+//				System.out.println("레벨 업");
+//				lev++;
+//				count=0;
+//			}
+//			System.out.println("게임 종료");
+//			
+//		}
 		
-		
-		
-		
-		
-		
+		//아래표를 이용해서 요금 계산하는 프로그램 구현
+//		String strAge="";
+//		String type="";
+//		int num1=0;
+//		int price=0;
+//		int totalPrice=0;
+//		for(;;) {
+//			System.out.print("나이>> ");
+//			int age=Integer.parseInt(new java.util.Scanner(System.in)
+//					.nextLine());
+//			if(age>19 &&age<65) {
+//				strAge="대인";
+//			}else if(age>12&&age<20) {
+//				strAge="청소년";
+//			}else {
+//				strAge="소인/경로";
+//			}
+//			System.out.print("인원 수 >>");
+//			num1=Integer.parseInt(new java.util.Scanner(System.in)
+//					.nextLine());
+//			
+//			System.out.println("이용권 종류\n주간권(1일권), 오후권(오후3시~), 윈터야간권(오후5시~), 2일권");
+//			java.util.Scanner str=new java.util.Scanner(System.in);
+//			type=str.next();
+//			if(strAge=="대인") {
+//				if(type.equals("주간권")) {
+//					price=function1(num1,46000);
+//				}else if(type.equals("오후권")){
+//					price=function1(num1,38000);
+//				}else if(type.equals("윈터야간권")) {
+//					price=function1(num1,20000);
+//				}else {
+//					price=function1(num1,74000);
+//				}
+//			}else if(strAge=="청소년") {
+//				if(type.equals("주간권")) {
+//					price=function1(num1,39000);
+//				}else if(type.equals("오후권")){
+//					price=function1(num1,32000);
+//				}else if(type.equals("윈터야간권")) {
+//					price=function1(num1,17000);
+//				}else {
+//					price=function1(num1,62000);
+//				}
+//			}else {
+//				if(type.equals("주간권")) {
+//					price=function1(num1,36000);
+//				}else if(type.equals("오후권")){
+//					price=function1(num1,29000);
+//				}else if(type.equals("윈터야간권")) {
+//					price=function1(num1,16000);
+//				}else {
+//					price=function1(num1,58000);
+//				}
+//			}
+//			System.out.println(strAge+" "+ num1+"명 "+type+"\n총 "+price+"원");
+//			System.out.print("종료 시 0 계속 구매시 1>>");
+//			int a=Integer.parseInt(new java.util.Scanner(System.in)
+//					.nextLine());
+//			totalPrice+=price;
+//			if(a==0) {
+//				System.out.println("총 금액 "+totalPrice+"원");
+//				break;
+//			}
+//
+//		}
+
+		//컴퓨터가 임의로 정한 하나의 숫자를 맞추는 프로그램
+		//사용자가 입력한 숫자가 임의의 숫자랑 같지 않다면 사용자가 숫자를 맞출 수 있도록
+		//큰지 작은지 힌트를 줘서 맞출 수 있도록 해줌
+		//정답을 맞추면 정답을 맞췄다는 메세지와 함께 총 몇회에 도전 끝에 맞췄는지 출력해보자
+		int num=(int)(Math.random()*99+1);
+		int a=0;
+		System.out.println("임의의 숫자 맞추기");
+		for(;;) {
+			a++;
+			System.out.println("숫자 입력>>");
+			int user=Integer.parseInt(new java.util.Scanner(System.in)
+					.nextLine());
+			if(num==user) {
+				System.out.println("정답입니다.");
+				break;
+			}else {
+				if(num<user) {
+					System.out.println("숫자가 입력하신 수보다 작습니다.");
+				}else {
+					System.out.println("숫자가 입력하신 수보다 큽니다.");
+				}
+			}
+
+		}
+		System.out.println("도전 횟수>>"+a);
+					
+			
+			
+
+
 		
 		
 		
