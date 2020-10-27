@@ -1,5 +1,5 @@
 package com.human.ex;
-
+//이중반복문
 public class JavaStart006 {
 
 
