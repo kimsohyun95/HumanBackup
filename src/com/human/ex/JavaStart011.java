@@ -323,7 +323,7 @@ public class JavaStart011 {
 			if(menu==1) {
 				System.out.println("전체 출석사항");
 				for(int i=0; i<50; i++) {
-					System.out.print((i+1)+"번"+num[i]+" ");	
+					System.out.print((i+1)+"번 "+num[i]+" ");	
 					if((i+1)%10==0) {
 						System.out.println("");
 					}
