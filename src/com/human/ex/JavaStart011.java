@@ -327,6 +327,18 @@ public class JavaStart011 {
 					if((i+1)%10==0) {
 						System.out.println("");
 					}
+					if(num[i].equals("결석")) {
+						aNum++;
+					}
+					if(num[i].equals("조퇴")) {
+						cNum++;
+					}
+					if(num[i].equals("지각")) {
+						dNum++;
+					}
+					if(num[i].equals("출석")) {
+						aNum++;
+					}
 				}
 				System.out.println("");
 				System.out.println("총 인원 "+50+"명");
@@ -340,29 +352,28 @@ public class JavaStart011 {
 				int a=Integer.parseInt(new java.util.Scanner(System.in)
 						.nextLine());
 				num[a-1]="결석";
-				aNum=aNum+1;
 				
 			}else if(menu==3) {
 				System.out.println("출석 학생 번호>>");
 				int b=Integer.parseInt(new java.util.Scanner(System.in)
 						.nextLine());
 				num[b-1]="출석";
-				bNum+=1;
-				
+						bNum=bNum+1;
+	
 			}else if(menu==4) {
 				System.out.println("조퇴 학생 번호>>");
 				int c=Integer.parseInt(new java.util.Scanner(System.in)
 						.nextLine());
 				num[c-1]="조퇴";
-				cNum+=1;
+						cNum=cNum+1;
 				
 			}else if(menu==5) {
 				System.out.println("지각 학생 번호>>");
 				int d=Integer.parseInt(new java.util.Scanner(System.in)
 						.nextLine());
 				num[d-1]="지각";
-				dNum+=1;
-				
+						dNum=dNum+1;
+
 			}else if(menu==6) {
 				System.out.println("프로그램 종료");
 			}else {
