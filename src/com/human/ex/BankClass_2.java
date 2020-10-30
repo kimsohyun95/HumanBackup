@@ -111,7 +111,7 @@ public class BankClass_2 {
 			System.out.println("id와 pw를 입력하세요");
 			System.out.println("ID>> ");
 			inputId=sc.nextLine();
-			if(inputId.contentEquals("exit")) {
+			if(inputId.equals("exit")) {
 				return;
 			}
 			System.out.println("PW>> ");
