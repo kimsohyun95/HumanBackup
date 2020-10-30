@@ -117,7 +117,7 @@ public class BankClass {
 						System.out.println("잘못된 입력입니다.");
 
 					}
-				}//isAdminLogin while문 종료
+				}//isAdminLogin while문 종료.
 				
 				
 			}else {

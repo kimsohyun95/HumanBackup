@@ -7,13 +7,24 @@ public class JavaStart013_1 {
 	public static void main(String[] args) {
 		// 은행 프로그램을 배열을 사용하여 구현.(함수 없이)
 		// 사용자 구분은 id로 보안을 위해서 password 사용자 이름 name이용
+		// 관리자 아이디admin 비밀번호 1111
 		java.util.Scanner sc=new java.util.Scanner(System.in);
-		String arrId[]= {"kim", "so", "hyun"};
-		int arrPw[]= {123, 456, 789 };
-		String arrName[]= {"홍길동", "홍길남", "홍길서"};
-		int account[]= {0,0,0};
+		
+		String arrId[]= new String[100];
+		int arrPw[]= new int[100];
+		String arrName[]= new String[100];
+		int account[]= new int[100];
+		
+		int listCount=3;
+		
+		arrId[0]="a1"; arrId[1]="a2"; arrId[2]="a3"; 
+		arrPw[0]=123; arrPw[1]=456; arrPw[2]=789;
+		arrName[0]="홍길동"; arrName[1]="홍길남"; arrName[2]="홍길서";
+		account[0]=0; account[1]=0; account[2]=0;
+		
 		String id="";
 		int pw=0;
+
 		
 		for(;;) {
 			System.out.println("로그인을 해주세요");
@@ -22,7 +33,7 @@ public class JavaStart013_1 {
 			System.out.print("비밀 번호 : ");
 			pw=Integer.parseInt(sc.nextLine());
 			for(;;) {
-				
+				System.out.println("");
 				if(id.equals(arrId[0])&&pw==arrPw[0]){
 					System.out.println(arrName[0]+"님이 로그인 하셨습니다.");
 					break;
@@ -32,6 +43,82 @@ public class JavaStart013_1 {
 				}else if(id.equals(arrId[2])&&pw==arrPw[2]) {
 					System.out.println(arrName[2]+"님이 로그인 하셨습니다.");
 					break;
+				}else if(id.equals("admin")&&(pw==1111)) {
+					System.out.println("관리자 계정");
+					System.out.println("1.계정 추가 2.계정 삭제 3.모든 사용자 정보 확인 4.id로 특정 사용자 정보 확인 5.종료");
+					System.out.println("메뉴 입력>>");
+					int selectNum=Integer.parseInt(sc.nextLine());
+					if(selectNum==1) {
+						System.out.println("추가할 사용자의 id를 입력하세요>>");
+						arrId[listCount]=sc.nextLine();
+						System.out.println("추가할 사용자의 pw를 입력하세요>>");
+						arrPw[listCount]=Integer.parseInt(sc.nextLine());
+						System.out.println("추가할 사용자의 성함을 입력하세요>>");
+						arrName[listCount]=sc.nextLine();
+						account[listCount]=0;
+						listCount++;
+						System.out.println("사용자 계정이 추가 되었습니다.");
+									
+					}else if(selectNum==2) {
+						System.out.println("삭제할 사용자의 id를 입력하세요>>");
+						String deleteId=sc.nextLine();
+						int findIndex=-1;
+						for(int i=0; i<listCount; i++) {
+							if(arrId[i].equals(deleteId)) {
+								findIndex=i;
+								break;
+							}
+						}
+						if(findIndex<0) {
+							System.out.println("찾으시는 아이디가 없습니다.");
+						}else {
+							for(int i=findIndex; i<arrId.length-1; i++) {
+								arrId[i]=arrId[i+1];
+								arrPw[i]=arrPw[i+1];
+								account[i]=account[i+1];
+								arrName[i]=arrName[i+1];
+							}
+							listCount--;
+							System.out.println("사용자의 정보를 삭제했습니다.");
+						}
+					}else if(selectNum==3) {
+						System.out.println("모든 사용자 정보");
+						for(int i=0; i<listCount; i++) {
+							System.out.println("---------------------------");
+							System.out.println("Id :"+arrId[i]);
+							System.out.println("Pw :"+arrPw[i]);
+							System.out.println("Name :"+arrName[i]);
+							System.out.println("Account :"+account[i]);
+						}
+						if(listCount==0) {
+							System.out.println("등록된 사용자 정보가 없습니다.");
+						}
+						
+					}else if(selectNum==4) {
+						System.out.println("찾으시는 사용자의 id를 입력하세요>>");
+						String findId=sc.nextLine();
+						boolean isFindId=false;
+						System.out.println(findId+"님의 정보");
+						for(int i=0; i<listCount; i++) {
+							if(arrId[i].equals(findId)) {
+								System.out.println("Id :"+arrId[i]);
+								System.out.println("Pw :"+arrPw[i]);
+								System.out.println("Name :"+arrName[i]);
+								System.out.println("Account :"+account[i]);
+								isFindId=true;
+							}
+						}
+						if(!isFindId) {
+							System.out.println("찾으시는 id가 없습니다.");
+						}
+					}else if(selectNum==5) {
+						System.out.println("로그아웃 되었습니다.");
+						break;
+						
+					}else {
+						System.out.println("잘못된 입력 입니다.");
+					}
+					
 				}else {
 					System.out.println("아이디, 비밀 번호를 확인해 주세요.");
 					System.out.println("");		
@@ -59,7 +146,7 @@ public class JavaStart013_1 {
 						}else if(inputNum==3) {
 							System.out.println("현재 잔액은 "+account[i]+"원 입니다.");
 						}else if(inputNum==4) {
-							System.out.println("종료 되었습니다.");
+							System.out.println("로그아웃 되었습니다.");
 							System.out.println("");
 						}else {
 							System.out.println("메뉴를 다시 입력 해 주세요");
