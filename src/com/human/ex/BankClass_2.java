@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class BankClass_2 {
 	//013_2문제풀이
+	
 
 		public static Scanner sc=new Scanner(System.in);
 		public static int listCount=3;
