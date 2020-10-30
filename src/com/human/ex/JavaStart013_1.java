@@ -125,7 +125,7 @@ public class JavaStart013_1 {
 				}
 			}
 			int inputNum=0;
-			for(int i=0; i<3; i++) {
+			for(int i=0; i<arrId.length; i++) {
 				if(id.equals(arrId[i])) {
 					while(inputNum!=4) {
 						System.out.println("");
