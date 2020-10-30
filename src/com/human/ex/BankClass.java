@@ -139,6 +139,7 @@ public class BankClass {
 
 				if(isLogin) {
 					//로그인 성공
+					//존재하는 사용자의 indexCount는 무엇인가?
 					System.out.println(inputId
 							+"님이 로그인 하였습니다.");
 					while(isLogin) {
