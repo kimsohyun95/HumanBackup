@@ -23,6 +23,7 @@ public class BlackJack2 {
 		deckIndex=52; p1DeckIndex=0; p2DeckIndex=0;
 		isP1Flag=true; isP2Flag=true;
 	}
+	
 	public static void mixCard() {
 		for(int i=0; i<10000; i++) {
 			int randomIndex=(int)(Math.random()*52);
@@ -31,6 +32,7 @@ public class BlackJack2 {
 			deck[randomIndex]=temp;
 		}
 	}
+	
 	public static void displayDeckCard() {
 		for(int i=0; i<deckIndex; i++) {
 			System.out.println(cardShape[deck[i]/13]+" "+
