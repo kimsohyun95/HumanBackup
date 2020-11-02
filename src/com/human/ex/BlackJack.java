@@ -77,7 +77,7 @@ public class BlackJack {
 		//j q k 10   //11,12,13을 10으로 바꾸주면 됨
 		for(int i=0; i<p1DeckIndex;i++) {
 			int countNum=p1Deck[i]%13+1;
-			if(countNum>10) {
+			if(countNum>10) { //jqk
 				countNum=10;
 			}	
 			
@@ -202,7 +202,7 @@ public class BlackJack {
 			
 			System.out.println("게임을 계속 하시겠습니까?(1.yes 2.no");
 			int i=Integer.parseInt(sc.nextLine());
-			if(i==1) {
+			if(i==2) {
 				break;
 			}
 
