@@ -3,7 +3,7 @@ package com.human.ex;
 import java.util.Scanner;
 
 public class BlackJack2 {
-	
+	public static java.util.Scanner sc=new java.util.Scanner(System.in);
 	
 	public static int deck[]=new int[52];
 	public static int p1Deck[]=new int[10];
@@ -118,40 +118,7 @@ public class BlackJack2 {
 		return returnValue;
 	}		
 	
-	
-	public static void win() {
-		System.out.println("p1 player의 점수 : "+p1Scoure());
-		System.out.println("p2 player의 점수 : "+p2Scoure());
-		System.out.println("");
-		
-		if(p1Scoure()>p2Scoure()) {
-			if(p1Scoure()>21) {
-				System.out.println("p2 player님이 이기셨습니다.");
-			}else {
-				System.out.println("p1 player님이 이기셨습니다.");
-			}
-		}else if(p1Scoure()<p2Scoure()) {
-			if(p2Scoure()>21) {
-				System.out.println("p1 player님이 이기셨습니다.");
-			}else {
-				System.out.println("p2 player님이 이기셨습니다.");
-			}
-		}else {
-			System.out.println("두 player님이 돔점으로 무승부입니다.");
-		}
-		
-	}
-	
-	
-	
-	public static void main(String[] args) {
-	java.util.Scanner sc=new java.util.Scanner(System.in);
-	
-		newCard();
-		
-
-		mixCard();
-		
+	public static void play() {
 		for(int i=0; i<10; i++) {
 			if(isP1Flag) {
 				System.out.println("카드를 받으시겠습니까?(1.yes 2.no)");
@@ -184,12 +151,56 @@ public class BlackJack2 {
 			displayP1Card();
 			displayP2Card();
 		}
-		win();
+	}
+	
+	public static void win() {
+		System.out.println("p1 player의 점수 : "+p1Scoure());
+		System.out.println("p2 player의 점수 : "+p2Scoure());
+		System.out.println("");
 		
+		if(p1Scoure()>p2Scoure()) {
+			if(p1Scoure()>21) {
+				System.out.println("p2 player님이 이기셨습니다.");
+			}else {
+				System.out.println("p1 player님이 이기셨습니다.");
+			}
+		}else if(p1Scoure()<p2Scoure()) {
+			if(p2Scoure()>21) {
+				System.out.println("p1 player님이 이기셨습니다.");
+			}else {
+				System.out.println("p2 player님이 이기셨습니다.");
+			}
+		}else {
+			System.out.println("두 player님이 돔점으로 무승부입니다.");
+		}
 		
-		
-		
-		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+	
+	
+		while(true) {
+
+			newCard();
+
+
+			mixCard();
+
+			play();
+			
+			win();
+
+			System.out.println("게임을 계속 진행하시겠습니까?(1.yes 2.no)");
+			if(2==Integer.parseInt(sc.nextLine())) {
+				break;
+			}
+			System.out.println("");
+
+
+
+		}
 		
 	}
 
