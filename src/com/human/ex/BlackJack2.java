@@ -103,7 +103,7 @@ public class BlackJack2 {
 			returnValue+=countNum;
 		}
 		for(int j=0; j<p2DeckIndex; j++) {
-			if(p1Deck[j]%13==0) { 
+			if(p2Deck[j]%13==0) { 
 				if((returnValue+10) >21){
 					
 				}else {
