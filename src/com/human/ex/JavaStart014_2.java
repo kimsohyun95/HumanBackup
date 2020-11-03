@@ -1,24 +1,43 @@
 package com.human.ex;
-
-public class JavaStart014_2 {
-	//필드, 정적 변수, 클래스 변수, static변수
-	public static String name="홍길동";
-	public static int kor=50;
-	public static int math=50;
-	public static int eng=60;
-	
-	public static int total() {
+// 학생의 과목 총점, 평균을 저장하는 프로그램
+class Student{
+	public String name="홍길동";
+	public int kor=50;
+	public int math=50;
+	public int  eng=60;
+	public int total() {
 		return kor+math+eng;
 	}
-	public static double avg() {
-		return total()/3.;
+	public double avg() {
+		return total()/3;
 	}
-	
-	
+}
+
+public class JavaStart014_2 {
+//	//필드, 정적 변수, 클래스 변수, static변수
+//	public static String name="홍길동";
+//	public static int kor=50;
+//	public static int math=50;
+//	public static int eng=60;
+//	
+//	public static int total() {
+//		return kor+math+eng;
+//	}
+//	public static double avg() {
+//		return total()/3.;
+//	}
+
 	public static void main(String[] args) {
-		// 학생의 과목 총점, 평균을 저장하는 프로그램
-		System.out.println(name+"님의 총점 : "+total());
-		System.out.println(name+"님의 평균: "+avg());
+		Student st1=new Student();
+		System.out.println(st1.name+"님의 총점 : "+st1.total());
+		System.out.println(st1.name+"님의 평균: "+st1.avg());
+		System.out.println((st1));
+		Student st2=new Student();
+		st2.name="홍길남";
+		st2.kor=100;
+		System.out.println(st2.name+"님의 총점 : "+st2.total());
+		System.out.println(st2.name+"님의 평균: "+st2.avg());
+		System.out.println(st2);
 		
 
 	}
