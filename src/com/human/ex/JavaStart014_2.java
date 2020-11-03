@@ -1,18 +1,25 @@
 package com.human.ex;
 // 학생의 과목 총점, 평균을 저장하는 프로그램
 class Student{
+	
+	public static int count=0;
+	
+	
 	private String name="홍길동";
 	private int kor=50;
 	private int math=50;
-	private int  eng=60;
+	private int eng=60;
 	
 	public Student() {
+		this("홍길동",23,56,88);
 	}
 	public Student(String name, int kor, int math, int eng) {
 		this.name = name;
 		this.kor = kor;
 		this.math = math;
 		this.eng = eng;
+		Student.count++; //여기선 Student생략 가능
+
 	}
 	public int total() {
 		return kor+math+eng;
@@ -70,7 +77,6 @@ class Student{
 		}
 		
 	}
-	
 	public int getMath() {
 		return math;
 	}
@@ -114,6 +120,7 @@ public class JavaStart014_2 {
 //		System.out.println(st2.name+"님의 총점 : "+st2.total());
 //		System.out.println(st2.name+"님의 평균: "+st2.avg());
 		System.out.println(st2);
+		System.out.println(Student.count);
 		
 
 	}
