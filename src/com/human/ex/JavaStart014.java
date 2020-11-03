@@ -24,6 +24,7 @@ class Rectangle{
 	}
 	
 	
+	
 	public double periphery() {
 		return 2*height+2*width;
 	}
